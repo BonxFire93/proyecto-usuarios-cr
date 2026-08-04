@@ -17,7 +17,7 @@ def get_connection():
 def index():
     conn = get_connection()
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM usuario")
+    cursor.execute("SELECT * FROM usuarios")
     lista_usuarios = cursor.fetchall()
     cursor.close()
     conn.close()
