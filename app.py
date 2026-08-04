@@ -19,17 +19,16 @@ def index():
     cursor = conn.cursor(dictionary=True)
     cursor.execute("SELECT * FROM usuarios")
     lista_usuarios = cursor.fetchall()
-    cursor.close()
     conn.close()
     return render_template("listar_usuarios.html", usuarios=lista_usuarios)
 
 
-@app.route("/crear", methods=["POST"])
+@app.route("/crear")
 def crear_usuario_form():
     return render_template("crear_usuario.html")
 
 
-@app.route("/crear")
+@app.route("/crear", methods=["POST"])
 def crear_usuario():
     nombre = request.form["nombre"]
     apellido = request.form["apellido"]
