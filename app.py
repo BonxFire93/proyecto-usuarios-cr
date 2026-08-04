@@ -33,7 +33,7 @@ def crear_usuario_form():
 def crear_usuario():
     nombre = request.form["nombre"]
     apellido = request.form["apellido"]
-    email = request.form["email"]
+    email = request.form["correo"]
     edad = request.form["edad"]
 
     conn = get_connection()
