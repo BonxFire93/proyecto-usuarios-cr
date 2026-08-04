@@ -24,7 +24,7 @@ def index():
     return render_template("listar_usuarios.html", usuarios=lista_usuarios)
 
 
-@app.route("/crear")
+@app.route("/crear", methods=["POST"])
 def crear_usuario_form():
     return render_template("crear_usuario.html")
 
