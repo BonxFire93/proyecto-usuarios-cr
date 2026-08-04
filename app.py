@@ -38,8 +38,8 @@ def crear_usuario():
 
     conn = get_connection()
     cursor = conn.cursor()
-    query = "INSERT INTO usuarios (nombre, apellido, correo, edad) VALUES ('%(nombre)s', '%(apellido)s', '%(email)s', '%(edad)s')"
-    cursor.execute(query)
+    query = "INSERT INTO usuarios (nombre, apellido, correo, edad) VALUES (%(nombre)s, %(apellido)s, %(email)s, %(edad)s)"
+    cursor.execute(query, (nombre, apellido, email, edad))
     conn.commit()
     conn.close()
     cursor.close()
