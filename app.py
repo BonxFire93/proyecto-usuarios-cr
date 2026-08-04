@@ -18,7 +18,7 @@ def index():
     conn = get_connection()
     cursor = conn.cursor(dictionary=True)
     cursor.execute("SELECT * FROM usuario")
-    lista_usuarios = cursor.fetchone()
+    lista_usuarios = cursor.fetchall()
     cursor.close()
     conn.close()
     return render_template("listar_usuarios.html", usuarios=lista_usuarios)
